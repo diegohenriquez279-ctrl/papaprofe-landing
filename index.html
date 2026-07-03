@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PapaProfe — Tu copiloto para acompañar las tareas de tu hijo</title>
+  <meta name="description" content="PapaProfe te explica la tarea a tu nivel y te guía para acompañar a tu hijo. Alineado al currículo nacional de El Salvador.">
+
+  <!-- Tipografías: Fredoka (títulos, redonda y cálida) + Nunito (cuerpo, muy legible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ============ SECCIÓN 1: HERO ============ -->
+  <header class="hero">
+    <div class="hero-contenido">
+      <span class="badge-pronto">✦ Muy pronto en El Salvador</span>
+      <h1>La tarea de tu hijo, <span class="resaltado">explicada para vos</span></h1>
+      <p class="tagline">PapaProfe tu copiloto para acompañar las tareas de tu hijo</p>
+      <p class="subtitle">
+        No necesitás ser maestro. Tomá una foto de la tarea, decinos el grado,
+        y te explicamos el concepto a tu nivel con preguntas para guiar a tu hijo.
+      </p>
+      <div class="hero-acciones">
+        <a href="#lista-espera" class="cta-boton">Únete a la lista de espera</a>
+        <a href="#como-funciona" class="enlace-suave">¿Cómo funciona? ↓</a>
+      </div>
+    </div>
+
+    <!-- Ilustración propia (SVG): papá y niño en la mesa de tareas -->
+    <div class="hero-ilustracion" aria-hidden="true">
+      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="img">
+        <!-- lámpara colgante -->
+        <line x1="330" y1="0" x2="330" y2="60" stroke="#0f766e" stroke-width="4"/>
+        <path d="M300 60 Q330 30 360 60 L352 78 L308 78 Z" fill="#f97316"/>
+        <ellipse cx="330" cy="82" rx="16" ry="6" fill="#fbbf24" opacity="0.9"/>
+        <ellipse cx="330" cy="150" rx="90" ry="60" fill="#fbbf24" opacity="0.12"/>
+        <!-- mesa -->
+        <rect x="60" y="290" width="400" height="16" rx="8" fill="#b45309"/>
+        <rect x="90" y="306" width="14" height="90" rx="6" fill="#92400e"/>
+        <rect x="416" y="306" width="14" height="90" rx="6" fill="#92400e"/>
+        <!-- cuaderno sobre la mesa -->
+        <g transform="rotate(-4 260 270)">
+          <rect x="200" y="252" width="120" height="76" rx="6" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+          <line x1="212" y1="268" x2="308" y2="268" stroke="#99f6e4" stroke-width="3"/>
+          <line x1="212" y1="284" x2="308" y2="284" stroke="#99f6e4" stroke-width="3"/>
+          <line x1="212" y1="300" x2="290" y2="300" stroke="#99f6e4" stroke-width="3"/>
+          <line x1="222" y1="256" x2="222" y2="324" stroke="#fda4af" stroke-width="2"/>
+        </g>
+        <!-- lápiz -->
+        <g transform="rotate(24 350 268)">
+          <rect x="330" y="262" width="52" height="9" rx="3" fill="#f97316"/>
+          <polygon points="382,262 394,266.5 382,271" fill="#fbbf24"/>
+          <rect x="326" y="262" width="8" height="9" rx="3" fill="#fda4af"/>
+        </g>
+        <!-- PAPÁ (izquierda, más alto) -->
+        <circle cx="150" cy="180" r="34" fill="#0d9488"/>
+        <circle cx="150" cy="172" r="26" fill="#fcd9b8"/>
+        <path d="M124 168 Q128 138 150 140 Q174 138 176 168 Q166 152 150 154 Q134 152 124 168 Z" fill="#44403c"/>
+        <path d="M110 292 Q112 226 150 220 Q188 226 190 292 Z" fill="#0d9488"/>
+        <!-- brazo del papá señalando el cuaderno -->
+        <path d="M182 238 Q222 244 236 262" stroke="#0d9488" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <circle cx="240" cy="265" r="9" fill="#fcd9b8"/>
+        <!-- NIÑO (derecha, más bajo) -->
+        <circle cx="330" cy="216" r="26" fill="#f97316"/>
+        <circle cx="330" cy="210" r="20" fill="#fcd9b8"/>
+        <path d="M310 208 Q312 186 330 188 Q348 186 350 208 Q342 196 330 197 Q318 196 310 208 Z" fill="#292524"/>
+        <path d="M300 292 Q302 244 330 240 Q358 244 360 292 Z" fill="#f97316"/>
+        <!-- brazo del niño escribiendo -->
+        <path d="M306 256 Q286 266 278 278" stroke="#f97316" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <circle cx="276" cy="281" r="7.5" fill="#fcd9b8"/>
+        <!-- sonrisas -->
+        <path d="M142 184 Q150 190 158 184" stroke="#92400e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M324 220 Q330 225 336 220" stroke="#92400e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- garabatos flotantes de tarea -->
+        <text x="60" y="90" class="doodle" fill="#0d9488" opacity="0.5">2+3=?</text>
+        <text x="420" y="130" class="doodle" fill="#f97316" opacity="0.5">a b c</text>
+        <text x="440" y="230" class="doodle" fill="#0d9488" opacity="0.4">½</text>
+        <text x="40" y="240" class="doodle" fill="#f97316" opacity="0.4">★</text>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ============ SECCIÓN 2: EL PROBLEMA (franja oscura) ============ -->
+  <section class="problema reveal">
+    <p class="problema-texto">
+      En El Salvador, <strong>miles de niños se quedan atrás</strong> cuando en casa
+      nadie puede ayudarles con la tarea. No por falta de amor, sino
+      <em>por falta de un apoyo que hable tu idioma.</em>
+    </p>
+  </section>
+
+  <!-- ============ SECCIÓN 3: FRASE CONGELADA ============ -->
+  <section class="frase reveal">
+    <span class="etiqueta-materia">¿Qué es PapaProfe?</span>
+    <p>
+      PapaProfe es una aplicación con inteligencia artificial que apoya a los padres
+      a ayudar a sus hijos con tareas, proyectos y materias, dándoles además
+      visibilidad del desempeño escolar del niño para reforzar a tiempo las áreas
+      donde necesita mejorar, alineada al currículo nacional.
+    </p>
+  </section>
+
+  <!-- ============ SECCIÓN 4: CÓMO FUNCIONA (3 pasos reales) ============ -->
+  <section class="como-funciona" id="como-funciona">
+    <h2 class="reveal">Así de simple, todas las tardes</h2>
+    <div class="pasos">
+      <div class="paso reveal">
+        <div class="paso-num">1</div>
+        <div class="paso-icono">📸</div>
+        <h3>Tomá una foto de la tarea</h3>
+        <p>O escribila. Decinos en qué grado va tu hijo y listo.</p>
+      </div>
+      <div class="conector" aria-hidden="true"></div>
+      <div class="paso reveal">
+        <div class="paso-num">2</div>
+        <div class="paso-icono">💡</div>
+        <h3>Te explicamos a tu nivel</h3>
+        <p>El concepto, claro y sin palabras raras. Para que vos lo entendás primero.</p>
+      </div>
+      <div class="conector" aria-hidden="true"></div>
+      <div class="paso reveal">
+        <div class="paso-num">3</div>
+        <div class="paso-icono">🤝</div>
+        <h3>Guiás a tu hijo</h3>
+        <p>Con preguntas que lo hacen pensar. Nunca la respuesta para copiar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECCIÓN 5: MÓDULOS (3 tarjetas) ============ -->
+  <section class="modulos">
+    <h2 class="reveal">Todo lo que necesitás en un solo lugar</h2>
+    <div class="tarjetas">
+
+      <article class="tarjeta reveal">
+        <div class="icono">📚</div>
+        <h3>Apoyo a la tarea en el momento</h3>
+        <p>Tomá una foto de la tarea o describila. PapaProfe te explica el concepto a tu nivel y te da preguntas guía para acompañar a tu hijo.</p>
+      </article>
+
+      <article class="tarjeta destacada reveal">
+        <div class="badge">Función estrella</div>
+        <div class="icono">📊</div>
+        <h3>Panel de desempeño</h3>
+        <p>Mirá en lenguaje simple en qué va bien tu hijo y en qué necesita apoyo. Reforzá a tiempo, antes de que una nota baja se vuelva frustración.</p>
+      </article>
+
+      <article class="tarjeta reveal">
+        <div class="icono">🎯</div>
+        <h3>Refuerzo dirigido</h3>
+        <p>Práctica personalizada y alineada al currículo nacional (MINED), para que el apoyo en casa hable el mismo idioma que la escuela.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ SECCIÓN 6: SHOWCASE DEL PANEL (función estrella en acción) ============ -->
+  <section class="showcase">
+    <div class="showcase-grid">
+      <div class="showcase-texto reveal">
+        <span class="etiqueta-materia">La función estrella</span>
+        <h2>Sabé exactamente dónde está tu hijo</h2>
+        <p>
+          Nada de boletas confusas ni sorpresas a fin de trimestre. El panel de
+          desempeño te muestra, en palabras de todos los días, qué materias van
+          bien y cuáles necesitan un empujón — para actuar <strong>hoy</strong>,
+          no cuando ya es tarde.
+        </p>
+        <ul class="showcase-lista">
+          <li>✓ Visión clara por materia</li>
+          <li>✓ En lenguaje de papá, no de boleta</li>
+          <li>✓ Reforzá a tiempo, sin frustración</li>
+        </ul>
+      </div>
+
+      <!-- Mockup de teléfono dibujado en HTML/CSS -->
+      <div class="telefono reveal" aria-hidden="true">
+        <div class="telefono-pantalla">
+          <div class="app-barra">
+            <span class="app-logo">PapaProfe</span>
+            <span class="app-avatar">👦</span>
+          </div>
+          <p class="app-saludo">Así va <strong>Mateo</strong> esta semana</p>
+
+          <div class="app-materia">
+            <div class="app-materia-info"><span>Matemática</span><span class="ok">Va bien 🙌</span></div>
+            <div class="barra"><div class="barra-relleno" style="--meta: 85%"></div></div>
+          </div>
+          <div class="app-materia">
+            <div class="app-materia-info"><span>Lenguaje</span><span class="ok">Va bien 🙌</span></div>
+            <div class="barra"><div class="barra-relleno" style="--meta: 78%"></div></div>
+          </div>
+          <div class="app-materia">
+            <div class="app-materia-info"><span>Comprensión lectora</span><span class="alerta">Necesita apoyo</span></div>
+            <div class="barra"><div class="barra-relleno naranja" style="--meta: 46%"></div></div>
+          </div>
+          <div class="app-materia">
+            <div class="app-materia-info"><span>Ciencias</span><span class="ok">Va bien 🙌</span></div>
+            <div class="barra"><div class="barra-relleno" style="--meta: 72%"></div></div>
+          </div>
+
+          <div class="app-sugerencia">
+            💡 <strong>Sugerencia de hoy:</strong> leé un cuento corto con Mateo
+            y hacele 2 preguntas sobre la historia.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECCIÓN 7: PARA QUIÉN ============ -->
+  <section class="para-quien reveal">
+    <h2>¿Para quién es PapaProfe?</h2>
+    <p>
+      Para papás, mamás y cuidadores de niños de <strong>1° a 6° de primaria</strong>
+      que quieren acompañar las tareas de sus hijos pero no siempre dominan el contenido
+      o no tienen el tiempo. Empezamos en El Salvador, con las familias que más lo necesitan.
+    </p>
+  </section>
+
+  <!-- SECCIÓN 8: CTA FINAL -->
+<section class="cta-final" id="lista-espera">
+  <div class="cta-contenido reveal">
+    <h2>Sé de los primeros en probar PapaProfe</h2>
+    <p>Dejanos tu correo y te avisamos cuando esté listo. Sin spam, solo el lanzamiento.</p>
+    <form class="formulario" action="https://formspree.io/f/meebpnwz" method="POST">
+      <input type="email" name="email" placeholder="tucorreo@ejemplo.com" required aria-label="Tu correo electrónico" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Escribí un correo válido, por ejemplo: tucorreo@ejemplo.com">
+      <button type="submit" class="cta-boton">Unirme a la lista</button>
+    </form>
+  </div>
+  <!-- garabatos decorativos -->
+  <span class="doodle-flotante d1" aria-hidden="true">✏️</span>
+  <span class="doodle-flotante d2" aria-hidden="true">📖</span>
+  <span class="doodle-flotante d3" aria-hidden="true">⭐</span>
+</section>
+
+  <!-- ============ PIE ============ -->
+  <footer class="pie">
+    <p>© 2026 PapaProfe — El Salvador</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
