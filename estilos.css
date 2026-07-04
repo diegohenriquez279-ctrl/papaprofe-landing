@@ -622,21 +622,97 @@ section h2 {
   background: var(--color-fondo);
 }
 
-/* ===== 14. RESPONSIVE: MÓVIL ===== */
+/* ===== 14. RESPONSIVE: MÓVIL (< 820px) ===== */
 @media (max-width: 820px) {
+  /* Paddings generales: más angostos que los 6vw de desktop, para no
+     ahogar el contenido en pantallas chicas. .problema tiene su propio
+     padding con más especificidad que "section", por eso se pisa aparte. */
+  section { padding: 3rem 1.2rem; }
+  .problema { padding: 2.4rem 1.2rem; }
+
+  /* --- Hero --- */
   .hero {
     grid-template-columns: 1fr;   /* una sola columna: texto arriba, dibujo abajo */
     text-align: center;
-    padding-top: 4rem;
+    padding: 2.4rem 1.2rem 2.8rem;
+    gap: 1.6rem;
     min-height: auto;
   }
 
   .hero::before { display: none; } /* la línea de margen estorba en móvil */
 
-  .hero-acciones { justify-content: center; }
+  .badge-pronto { margin-bottom: 1rem; }
+  .hero h1 { margin-bottom: 0.8rem; }
+  .tagline { margin-bottom: 0.6rem; }
+  .subtitle { margin-left: auto; margin-right: auto; margin-bottom: 1.6rem; }
 
-  .subtitle { margin-left: auto; margin-right: auto; }
+  .hero-acciones {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 
+  /* El botón principal ocupa el ancho disponible (más fácil de tocar) */
+  .hero-acciones .cta-boton {
+    width: 100%;
+    max-width: 22rem;
+  }
+
+  /* "¿Cómo funciona? ↓" baja debajo del botón, centrado y con más área de toque */
+  .enlace-suave {
+    display: inline-block;
+    padding: 0.6rem 0.5rem;
+  }
+
+  /* Cualquier .cta-boton (hero o formulario) cumple el mínimo de 48px de alto */
+  .cta-boton {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-ilustracion svg { max-width: 420px; }
+
+  /* --- Cómo funciona: conectores verticales (con flecha) en vez de horizontales --- */
+  .pasos { flex-direction: column; gap: 0; }
+
+  .paso { width: 100%; max-width: 420px; padding: 1.3rem 1.2rem; }
+
+  .paso p { font-size: 1rem; }
+
+  .conector {
+    display: block;
+    width: 3px;
+    height: 2.2rem;
+    border-top: none;
+    border-left: 3px dashed rgba(249, 115, 22, 0.55);
+    margin: 0.1rem 0 0.5rem;
+    position: relative;
+  }
+
+  .conector::after {
+    content: '▼';
+    position: absolute;
+    left: 50%;
+    bottom: -0.7rem;
+    transform: translateX(-50%);
+    color: rgba(249, 115, 22, 0.7);
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  /* --- Tarjetas de módulos: más aire para que el badge no quede apretado --- */
+  .tarjeta.destacada { margin-top: 1.4rem; }
+
+  .badge {
+    top: -0.85rem;
+    font-size: 0.78rem;
+    padding: 0.32rem 1rem;
+  }
+
+  /* --- Showcase / teléfono --- */
   .showcase-grid {
     grid-template-columns: 1fr;   /* teléfono debajo del texto */
     gap: 2.5rem;
@@ -647,4 +723,36 @@ section h2 {
   .showcase-lista { display: inline-block; text-align: left; }
 
   .telefono { transform: rotate(0deg); } /* recto en móvil: se ve más grande */
+
+  /* --- CTA final: input y botón apilados y de ancho completo --- */
+  .formulario {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formulario input,
+  .formulario .cta-boton {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Doodles flotantes: a las esquinas, lejos del formulario */
+  .doodle-flotante { font-size: 1.4rem; opacity: 0.28; }
+  .d1 { top: 5%;  left: 6%; }
+  .d2 { bottom: 5%; right: 7%; }
+  .d3 { top: 7%;  right: 9%; }
+}
+
+/* ===== 15. RESPONSIVE: PANTALLAS MUY CHICAS (< 480px, ej. iPhone SE) ===== */
+@media (max-width: 480px) {
+  section { padding: 2.4rem 1.2rem; }
+  .problema { padding: 2.2rem 1.2rem; }
+  .hero { padding: 2rem 1.2rem 2.4rem; }
+
+  /* Clamps con mínimos más chicos para que ningún título rompa el layout a 320px */
+  .hero h1 { font-size: clamp(1.7rem, 8vw, 2.6rem); }
+  section h2 { font-size: clamp(1.4rem, 6.5vw, 1.9rem); }
+  .problema-texto { font-size: clamp(1.05rem, 4.5vw, 1.25rem); }
+
+  .hero-ilustracion svg { max-width: 300px; }
 }
